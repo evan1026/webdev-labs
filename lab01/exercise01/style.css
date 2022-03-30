@@ -2,6 +2,31 @@ body * {
     box-sizing: border-box;
 }
 
+body section {
+    border: solid 1px rgb(173, 173, 173);
+    display: inline-block;
+}
+
+body section * {
+    padding: 15px;
+    margin: 0;
+}
+
+body section img {
+    padding: 0;
+    width: 50vh;
+}
+
+body section p {
+    width: 50vh;
+}
+
+body section button {
+    padding: 0;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
