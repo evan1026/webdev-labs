@@ -40,7 +40,8 @@ def exercise1():
 def exercise2():
     return render_template(
         'quote-of-the-day.html',
-        user=current_user
+        user=current_user,
+        quote=random.choice(quotes)
     )
 
 ##############
