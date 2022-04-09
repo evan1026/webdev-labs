@@ -35,3 +35,38 @@ main {
 @media only screen and (max-width: 600px) {
     /* Media queries go here */
 }
+
+/*
+ * Restaurant page result elements
+ */
+
+.restaurant-result {
+    width: 50vw;
+    border: 1px solid #aaa;
+}
+.restaurant-result h3 {
+    margin: 10px;
+}
+.restaurant-result img {
+    width: 100%;
+}
+.restaurant-result-data-container {
+    margin: 5px 10px;
+}
+.restaurant-result table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.restaurant-result tr {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.restaurant-result tr:first-child {
+    border-top: 0px;
+}
+.restaurant-result tr:last-child {
+    border-bottom: 0px;
+}
+.restaurant-result td {
+    padding: 5px;
+}
