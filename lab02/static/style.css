@@ -39,9 +39,21 @@ main {
 /*
  * Restaurant page result elements
  */
+.restaurant-results-table {
+    display: table;
+    border-spacing: 10px;
+}
+.restaurant-results-table-row {
+    display: table-row;
+}
+.restaurant-results-table-cell {
+    width: 25vw;
+    display: table-cell;
+    vertical-align: top;
+}
+
 
 .restaurant-result {
-    width: 50vw;
     border: 1px solid #aaa;
 }
 .restaurant-result h3 {
