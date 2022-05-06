@@ -1,12 +1,20 @@
+function changeSize(elem, amount) {
+   let currSizeString = window.getComputedStyle(elem).getPropertyValue('font-size');
+   let currSize = parseFloat(currSizeString);
+   elem.style.fontSize = (currSize + amount) + 'px';
+}
+
 const makeBigger = () => {
-   alert('make bigger!');
+   changeSize(document.querySelector(".content"), 5);
+   changeSize(document.querySelector("h1"), 5);
 };
 
 const makeSmaller = () => {
-   alert('make smaller!');
+   changeSize(document.querySelector(".content"), -5);
+   changeSize(document.querySelector("h1"), -5);
 };
 
-/*
-document.querySelector(???).addEventListener('click', makeBigger);
-document.querySelector(???).addEventListener('click', makeSmaller);
-*/
+
+document.querySelector("#a1").addEventListener('click', makeBigger);
+document.querySelector("#a2").addEventListener('click', makeSmaller);
+
