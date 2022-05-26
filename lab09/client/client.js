@@ -150,17 +150,34 @@ const utils = {
 /********************
  * 5. Your Code Here
  ********************/
+const updateActiveUsers = users => {
+    let userList = qs('#users-list > ul');
+    while (userList.firstChild) {
+        userList.removeChild(userList.firstChild);
+    }
+    for (let user of users) {
+        let listElement = document.createElement('li');
+        listElement.innerText = user;
+        userList.appendChild(listElement);
+    }
+}
+
 const handleServerMessage = ev => {
     const data = JSON.parse(ev.data);
     if (data.type === "login") {
-        console.log('A user has just connected:');
-        console.log(data);
+        updateActiveUsers(data.active_users);
     } else if (data.type === "disconnect") {
-        console.log('A user has just disconnected:');
-        console.log(data);
+        updateActiveUsers(data.active_users);
     } else if (data.type === "chat") {
-        console.log('A user has just sent a chat message:');
-        console.log(data);
+        let chatDiv = qs("#chat");
+        let newMessage = document.createElement("p");
+        if (data.username === username){
+            newMessage.style.alignSelf = 'flex-end';
+            newMessage.innerHTML = `<b>You:</b>&emsp;${data.text}`;
+        } else {
+            newMessage.innerHTML = `<b>${data.username}:</b>&emsp;${data.text}`;
+        }
+        chatDiv.appendChild(newMessage);
     } else {
         console.error("Message type not recognized.");
         console.log(data);
