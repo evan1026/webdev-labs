@@ -166,8 +166,18 @@ const handleServerMessage = ev => {
     const data = JSON.parse(ev.data);
     if (data.type === "login") {
         updateActiveUsers(data.active_users);
+        if (data.username === username){
+            qs('#update').innerText = "You have joined the chat";
+        } else {
+            qs('#update').innerText = `${data.username} has joined the chat`;
+        }
     } else if (data.type === "disconnect") {
         updateActiveUsers(data.active_users);
+        if (data.username === username){
+            qs('#update').innerText = "You have left the chat";
+        } else {
+            qs('#update').innerText = `${data.username} has left the chat`;
+        }
     } else if (data.type === "chat") {
         let chatDiv = qs("#chat");
         let newMessage = document.createElement("p");
